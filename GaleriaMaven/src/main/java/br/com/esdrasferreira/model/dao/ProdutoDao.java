@@ -33,7 +33,7 @@ public class ProdutoDao {
 			throw new Exception();
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
-
+			conexao.close();
 		}
 
 	}
@@ -55,7 +55,7 @@ public class ProdutoDao {
 			throw new Exception();
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
-
+			conexao.close();
 		}
 
 	}
@@ -76,7 +76,7 @@ public class ProdutoDao {
 			throw new Exception();
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
-
+			conexao.close();
 		}
 
 	}
@@ -97,7 +97,7 @@ public class ProdutoDao {
 			throw new Exception();
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
-
+			conexao.close();
 		}
 
 	}
@@ -130,7 +130,7 @@ public class ProdutoDao {
 
 		} finally {
 			FabricaConexao.fecharStmtRs(ps, rs);
-
+			conexao.close();
 		}
 
 	}
@@ -168,7 +168,7 @@ public class ProdutoDao {
 
 		} finally {
 			FabricaConexao.fecharStmtRs(ps, rs);
-
+			conexao.close();
 		}
 
 	}
@@ -205,7 +205,7 @@ public class ProdutoDao {
 
 		} finally {
 			FabricaConexao.fecharStmtRs(st, rs);
-			
+			conexao.close();
 		}
 
 	}
@@ -251,7 +251,7 @@ public class ProdutoDao {
 		} finally {
 			FabricaConexao.fecharStmtRs(st, rs);
 			FabricaConexao.fecharStmtRs2(stNum, rsNum);
-			
+			conexao.close();
 			
 		}
 
@@ -273,7 +273,7 @@ public class ProdutoDao {
 			throw new Exception();
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
-
+			conexao.close();
 		}
 
 	}

@@ -22,7 +22,7 @@
 
 
  
-     <Resources allowLinking="false">
+        <Resources allowLinking="false">
         <PostResources readOnly="false"
                        className="org.apache.catalina.webresources.DirResourceSet"
                        base="/home/esdras/appservers/arquivos/imagens/"

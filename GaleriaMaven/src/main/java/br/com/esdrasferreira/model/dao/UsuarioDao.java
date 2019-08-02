@@ -44,7 +44,7 @@ public class UsuarioDao {
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
 			FabricaConexao.fecharResultSet(rs);
-
+			conexao.close();
 		}
 
 	}
@@ -74,7 +74,7 @@ public class UsuarioDao {
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
 			FabricaConexao.fecharResultSet(rs);
-			
+			conexao.close();
 
 		}
 
@@ -107,7 +107,7 @@ public class UsuarioDao {
 		} finally {
 			FabricaConexao.fecharPreparedStatement(ps);
 			FabricaConexao.fecharResultSet(rs);
-
+			conexao.close();
 		}
 
 	}

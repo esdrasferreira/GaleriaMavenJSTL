@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.esdrasferreira.factory.jdbc.FabricaConexao;
 import br.com.esdrasferreira.model.dao.ProdutoDao;
 import br.com.esdrasferreira.model.dao.UsuarioDao;
 import br.com.esdrasferreira.model.dao.UsuarioProdutoDao;
@@ -39,12 +38,12 @@ public class ProdutoController extends HttpServlet {
 
 		ProdutoDao produtoDAO = null;
 		Usuario user = null;
-		UsuarioDao userDao = null;
+		
 		String idProduto = request.getParameter("idProduto");
 
 		int userID = (Integer) sessao.getAttribute("idUsuario");
 		String numPagina = request.getParameter("numpagina");
-		System.out.println(numPagina);
+		System.out.println("número da pagina: "+numPagina);
 		if(numPagina== null) {
 			numPagina="1";
 		}
@@ -52,12 +51,13 @@ public class ProdutoController extends HttpServlet {
 		System.out.println("offset: "+offset);
 		
 		if (comando == null)
-			comando = "produtos";
+                                                                                                                                                                                                			comando = "produtos";
 
 		try {
 			produtoDAO = new ProdutoDao();
 			user = new Usuario();
-			userDao = new UsuarioDao();
+			UsuarioDao userDao = new UsuarioDao();
+			
 			if (comando.equals("produtos")) {
 
 				user = userDao.getUser(userID);

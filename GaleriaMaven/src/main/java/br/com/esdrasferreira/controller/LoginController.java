@@ -31,40 +31,24 @@ public class LoginController extends HttpServlet {
 		String senha = request.getParameter("senha");
 		String parametro = request.getParameter("parametro");
 
-		
-
 		if (parametro.equals("login")) {
 
-			
+			try {
+				Usuario user = new Usuario();
+				UsuarioDao dao = new UsuarioDao();
 
-				
+				user = dao.login(usuario, senha);
 
-				try {
-					Usuario user = new Usuario();
-					UsuarioDao dao = new UsuarioDao();
+				sessao.setAttribute("usuario", user.getUsuario());
+				sessao.setAttribute("idUsuario", user.getId());
 
-					user = dao.login(usuario, senha);
-					
-					
-					
+				request.getRequestDispatcher("/produto-controller").forward(request, response);
 
-					sessao.setAttribute("usuario", user.getUsuario());
-					sessao.setAttribute("idUsuario", user.getId());
+			} catch (Exception e) {
 
-					request.getRequestDispatcher("/produto-controller").forward(request, response);
-					
+				e.printStackTrace();
 
-				} catch (Exception e) {
-
-					e.printStackTrace();
-
-				}
-
-			
-
-			
-
-			
+			}
 
 		} else if (parametro.equals("logout")) {
 
